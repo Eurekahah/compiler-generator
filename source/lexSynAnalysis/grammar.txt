@@ -1,0 +1,33 @@
+# Program
+P -> S
+
+# Statement
+S -> D
+S -> A
+
+# Declaration
+D -> type id ; @declare
+
+# Assignment 
+A -> id = E ; @assign
+
+# Expression
+E -> T E'
+
+# Expression Prime
+E' -> + T E' @add
+E' -> - T E' @sub
+E' -> @epsilon
+
+# Term
+T -> F T'
+
+# Term Prime
+T' -> * F T' @mul
+T' -> / F T' @div
+T' -> @epsilon
+
+# Factor
+F -> ( E ) @value
+F -> id @value
+F -> num @value
